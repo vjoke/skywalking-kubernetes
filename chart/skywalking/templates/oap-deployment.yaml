@@ -125,6 +125,9 @@ spec:
         {{- if .Values.oap.envoy.als.enabled }}
         - name: SW_ENVOY_ALS_ENABLED
           value: {{ .Values.oap.envoy.als.enabled | quote}}
+        # Added by hsiung
+        - name: SW_ENVOY_METRIC_ALS_HTTP_ANALYSIS
+          value: {{ .Values.oap.envoyMetric.default.alsHTTPAnalysis | quote}}
         {{- end }}
         - name: SW_STORAGE_ES_CLUSTER_NODES
 {{- if .Values.elasticsearch.enabled }}
