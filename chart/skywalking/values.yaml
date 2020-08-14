@@ -37,7 +37,7 @@ oap:
   replicas: 1
   service:
     type: ClusterIP
-  javaOpts: -Xmx256m -Xms256m
+  javaOpts: -Xmx512m -Xms512m
   antiAffinity: "soft"
   nodeAffinity: {}
   nodeSelector: {}
@@ -167,15 +167,15 @@ elasticsearch:
   # additionals labels
   labels: {}
 
-  esJavaOpts: "-Xmx128m -Xms128m"
+  esJavaOpts: "-Xmx512m -Xms512m"
 
   resources:
     requests:
       cpu: "100m"
-      memory: "512M"
+      memory: "1G"
     limits:
       cpu: "1000m"
-      memory: "512M"
+      memory: "1G"
 
   initResources: {}
     # limits:
@@ -224,7 +224,7 @@ elasticsearch:
         - persistentVolumeClaim
 
   persistence:
-    enabled: false 
+    enabled: true 
     annotations: {}
 
   extraVolumes: ""
